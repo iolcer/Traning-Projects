@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:#e3f2fd;">
+  <a class="navbar-brand" href="/">Bigcevre Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto"> <!--<tr> sola doğru yaslar </tr> -->
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">Hakkımızda</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/articles">Makaleler</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto"> <!--<tr> sağa doğru yaslar </tr> -->
+      {% if session["logged_in"] %}  <!--<tr> True ise, yani giriş yapmışsak </tr> -->
+      
+      <li class="nav-item active">
+        <a class="nav-link" href="/dashboard">Kontrol Paneli</a>  <!--<tr> giriş yapılmadan Kontrol Paneli sekmesi gözükmez. </tr> -->
+      </li>
+                 
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Çıkış Yapın</a>   <!--<tr> giriş yapılmış ise Çıkış Yapın sekmesi gözüksün </tr> -->
+      </li>
+      
+      {% else %}
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/login">Giriş Yapın</a>  <!--<tr> giriş yapılmamış ise Giriş Yapın sekmesi gözüksün </tr> -->
+      </li>
+
+      {% endif %}
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/register">Kayıt Olun</a>
+      </li>
+        
+    </ul>
+
+  </div>
+</nav>

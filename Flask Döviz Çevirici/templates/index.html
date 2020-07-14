@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Döviz Çevirici</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <body class = "bg-danger">
+    
+            <div class="container">
+        
+                <div class="row">
+        
+                    <div class="col-md-6 mx-auto">
+        
+                        <div class="card card-body text-center mt-5">
+        
+                            <h1 class="heading display-5 pb-3">Döviz Çevirici</h1>
+        
+                        <form id="currency-form" method="post">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text">1.Para Birimi</span>
+                                    <select class="selectpicker" name = "firstCurrency">
+                                     <option>USD</option>
+                                     <option>EUR</option>
+                                     <option>JPY</option>
+                                     <option>BGN</option>
+                                     <option>CZK</option>
+                                     <option>DKK</option>
+                                     <option>GBP</option>          
+                                     <option>HUF</option>
+                                     <option>PLN</option>
+                                     <option>RON</option>
+                                     <option>SEK</option>
+                                     <option>CHF</option>
+                                     <option>ISK</option>
+                                     <option>NOK</option>          
+                                     <option>HRK</option>
+                                     <option>RUB</option>
+                                     <option>TRY</option>
+                                     <option>AUD</option>
+                                     <option>BRL</option>          
+                                     <option>CAD</option>
+                                     <option>CNY</option>
+                                     <option>HKD</option>
+                                     <option>IDR</option>          
+                                     <option>ILS</option>
+                                     <option>INR</option>
+                                     <option>KRW</option>
+                                     <option>MXN</option>          
+                                     <option>MYR</option>
+                                     <option>NZD</option>
+                                     <option>PHP</option>
+                                     <option>SGD</option>
+                                     <option>THB</option>          
+                                     <option>ZAR</option>
+                                    </select>
+            
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text">2.Para Birimi</span>
+                                    <select class="selectpicker" name = "secondCurrency">
+                                            <option>USD</option>
+                                            <option>EUR</option>
+                                            <option>JPY</option>
+                                            <option>BGN</option>
+                                            <option>CZK</option>
+                                            <option>DKK</option>
+                                            <option>GBP</option>          
+                                            <option>HUF</option>
+                                            <option>PLN</option>
+                                            <option>RON</option>
+                                            <option>SEK</option>
+                                            <option>CHF</option>
+                                            <option>ISK</option>
+                                            <option>NOK</option>          
+                                            <option>HRK</option>
+                                            <option>RUB</option>
+                                            <option>TRY</option>
+                                            <option>AUD</option>
+                                            <option>BRL</option>          
+                                            <option>CAD</option>
+                                            <option>CNY</option>
+                                            <option>HKD</option>
+                                            <option>IDR</option>          
+                                            <option>ILS</option>
+                                            <option>INR</option>
+                                            <option>KRW</option>
+                                            <option>MXN</option>          
+                                            <option>MYR</option>
+                                            <option>NZD</option>
+                                            <option>PHP</option>
+                                            <option>SGD</option>
+                                            <option>THB</option>          
+                                            <option>ZAR</option>
+                                           </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name = "amount" placeholder="Miktar" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <input id ="submitbtn" type="submit" value = "Hesapla" class = "btn btn-danger">
+                            </div>
+                        </form>
+                        
+                        {% if info %}
+                        <div id="results" class = "pt-4">
+                            <h5>Sonuçlar</h5>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text">{{info.amount}} {{info.firstCurrency}} </span>
+                                    <div class="form-control" id="total">
+                                       {{info.result }} {{info.secondCurrency}}
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        
+                        {% endif %}
+                       
+                       
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+</body>
+</html>
